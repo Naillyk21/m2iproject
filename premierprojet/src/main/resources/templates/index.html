@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${dateajd}">06/03/2023-11:36</h1>
+<form th:object="${user}" action="/index" method="post">
+    <label for="prenom">Prénom :</label>
+    <input th:value="*{firstName}" th:field="*{firstName}" type="text" id="prenom" name="prenom"><br>
+
+    <label for="nom">Nom :</label>
+    <input  th:value="*{lastName}" th:field="*{lastName}" type="text" id="nom" name="nom"><br>
+
+    <label for="username">Nom d'utilisateur :</label>
+    <input th:value="*{username}" th:field="*{username}" type="text" id="username" name="username"><br>
+
+    <label for="email">Email :</label>
+    <input th:value="*{email}+'@gmail.com'" th:field="*{email}" type="text" id="email" name="email"><br>
+
+    <label for="motdepasse">Mot de passe :</label>
+    <input th:field="*{password}" type="password" id="motdepasse" name="motdepasse"><br>
+
+    <input type="submit" value="Envoyer">
+</form>
+</body>
+</html>
